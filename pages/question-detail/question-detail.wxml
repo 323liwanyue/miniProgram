@@ -1,0 +1,18 @@
+<!--pages/question-detail/question-detail.wxml-->
+<!-- 顶部 --> 
+<view class="wechat-header">
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt {{alterAlign ? 'textLeft' : ''}}">{{c_s_title}}</text> 
+</view> 
+</view>
+</view>
+<!-- 内容 -->
+<view class="question-detail-wrap" style="margin-top: calc({{statusBarHeight+titleBarHeight}}px + 10rpx);">
+    <text class="question-detail-title">{{c_title}}</text>
+    <text class="question-detail-cnt">
+        {{c_content}}
+    </text>
+</view>

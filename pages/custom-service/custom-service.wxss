@@ -1,0 +1,172 @@
+/* pages/custom-service/custom-service.wxss */
+
+page {
+  background: #f2f2f2;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+/* 联系方式 */
+
+.contact-wrap {
+  position: relative;
+  height: 300rpx;
+  margin-bottom: 10rpx;
+}
+
+.contact-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 300rpx;
+  z-index: -1;
+}
+
+.contact-box {
+  height: 220rpx;
+  padding: 0 106rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-single-box {
+  position: relative;
+  width: 110rpx;
+  height: 110rpx;
+  color: #fff;
+  font-size: 22rpx;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 110rpx;
+}
+
+.contact-single-box image {
+  position: absolute;
+  top: -20rpx;
+  right: -12rpx;
+}
+
+.message {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.mess-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.custom-service-icon {
+  width: 100rpx;
+  height: 160rpx;
+}
+
+.cellphone {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* 搜索 */
+
+.search-wrap {
+  padding: 0 20rpx;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.search-icon {
+  width: 39rpx;
+  height: 40rpx;
+  margin-left: 40rpx;
+}
+
+.search input {
+  width: calc(100% - 80rpx);
+  padding-left: 40rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.search-input-placeholder {
+  color: #333;
+}
+
+/* 问题列表 */
+
+.question-switch-box {
+  height: 88rpx;
+  display: flex;
+  background: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.question-class-name {
+  width: calc((100% - 1rpx) / 2 - 70rpx);
+  height: 100%;
+  padding-left: 70rpx;
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  font-size: 30rpx;
+}
+
+.question-class-name:first-child {
+  border-right: 1rpx solid #e5e5e5;
+}
+
+.question-class-name image {
+  margin-right: 14rpx;
+}
+
+.software-use-icon {
+  width: 49rpx;
+  height: 50rpx;
+}
+
+.vehicle-relate-icon {
+  width: 69rpx;
+  height: 50rpx;
+}
+
+.is-choose {
+  color: #000;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.question text {
+  width: calc(100% - 30rpx);
+}
+
+.no-ques-data {
+  height: calc(100% - 92rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 30rpx;
+}

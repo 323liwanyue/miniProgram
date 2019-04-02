@@ -1,0 +1,29 @@
+<!--pages/account-manage/account-manage.wxml-->
+<view class="wechat-header">
+<!-- 顶部 --> 
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt">账号管理</text> 
+</view> 
+</view> 
+</view>
+<!-- 内容 -->
+<view class="account-info-list" style="margin-top: calc({{statusBarHeight+titleBarHeight}}px + 10rpx);">
+    <text>用户名</text>
+    <text>{{username}}</text>
+</view>
+<view class="account-info-list">
+    <text>性别</text>
+    <text>{{gender}}</text>
+</view>
+<view class="account-info-list">
+    <text>手机号</text>
+    <text>{{contact}}</text>
+</view>
+<navigator class="account-info-list margin-bottom-60" url="../change-password/change-password">
+    <text>修改密码</text>
+    <image src="../../images/arrow-right.png" class="arrow-right"></image>
+</navigator>
+<view class="btn-common-wrap"><view class="common-btn" bindtap="exit">退出登录</view></view>

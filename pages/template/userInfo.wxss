@@ -1,0 +1,92 @@
+/* 用户信息 */
+.user-info-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 99;
+}
+
+.user-info-space {
+  position: absolute;
+  left: 0;
+  width: 30.6%;
+  height: 100%;
+}
+
+.user-info-wrap {
+  position: absolute;
+  right: 0;
+  width: 69.4%;
+  height: 100%;
+  background: #fff;
+  transition: all 2s;
+}
+
+.user-info-name {
+  position: relative;
+  width: 100%;
+  height: 340rpx;
+}
+
+.user-info-name image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.user-info-name>text {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.user-info-list {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  padding-left: 40rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.user-info {
+  width: 36rpx;
+  height: 30rpx;
+  margin-right: 40rpx;
+}
+
+.history-record {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 3rpx;
+  margin-right: 43rpx;
+}
+
+.skip-to-service {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-top: 1rpx solid #e5e5e5;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+}
+
+.my-active {
+  color: #2aa9e6;
+}

@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.1",
+	"appid": "wxcafd082ac73fdfe5",
+	"projectname": "weChat",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "alarm-detail",
+					"pathName": "pages/alarm-detail/alarm-detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "feedback",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "history-record",
+					"pathName": "pages/history-record/history-record",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "custom-service",
+					"pathName": "pages/custom-service/custom-service",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "question-detail",
+					"pathName": "pages/question-detail/question-detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "account-manage",
+					"pathName": "pages/account-manage/account-manage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "change-password",
+					"pathName": "pages/change-password/change-password",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "searchAllQes",
+					"pathName": "pages/searchAllQes/searchAllQes",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "interface",
+					"pathName": "pages/interface/interface"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,32 @@
+<!--pages/alarm-detail/alarm-detail.wxml-->
+<import src="../template/userInfo.wxml"/>
+<view class="index-container">
+<view class="wechat-header">
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<!-- 顶部 --> 
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt {{alterAlign ? 'textLeft' : ''}}">{{s_alarmname}}</text> 
+</view> 
+</view>
+</view>
+  <!-- 内容 -->
+  <view class="space" style="padding-top: {{statusBarHeight+titleBarHeight}}px;"></view>
+  <scroll-view class="alarm-detail-cnt" style="height: calc(100% - {{statusBarHeight+titleBarHeight}}px - 100rpx);" scroll-y>
+      <text class="alarm-title">{{alarmname}}</text>
+      <text class="alarm-detail-describe">
+      {{alarmdes}}
+      </text>
+      <text class="alarm-title">建议处理方法</text>
+      <text class="alarm-handle-detail">
+      {{alarmassist}}
+      </text>
+  </scroll-view>
+  <!-- 提交反馈 -->
+  <view bindtap="skipToFeedback" class="alarm-detail-feedback">不能解决问题，提交反馈</view>
+</view>
+<view class="user-operator-wrap" style="top:calc({{statusBarHeight+titleBarHeight}}px + 20rpx);">
+    <image  src="../../images/user-s.png" class="user-s-icon" bindtap="showUserInfo"></image>
+</view>
+<template is="userInfo" data="{{uname:uname,ugender:ugender,myselfSrc:myselfSrc,historySrc:historySrc,myFlag:myFlag}}" wx:if="{{userInfoShow}}"></template>

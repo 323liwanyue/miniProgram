@@ -1,0 +1,24 @@
+<template name="userInfo">
+  <!-- 用户信息 -->
+  <view class="user-info-mask" catchtouchmove="true">
+    <view class="user-info-space" bindtap="showUserInfo" catchtouchmove="true"></view>
+    <view class="user-info-wrap">
+      <!-- 用户名 -->
+      <view class="user-info-name">
+        <image src="../../images/my-bg.png"></image>
+        <text>{{uname}}{{ugender == 0 ? "先生" : "女士"}}</text>
+      </view>
+      <!-- 用户操作列表 -->
+      <view class="user-info-list" data-flag='1' bind:touchstart="switchMyInfo" bind:touchend="switchMyStyle" bindtap="toAccount">
+        <image src="{{myFlag == 1 ? '../../images/myself-hover.png' : '../../images/myself.png'}}" class="user-info"></image>
+        <text class="{{myFlag == 1 ? 'my-active' : '' }}">账号管理</text>
+      </view>
+      <view class="user-info-list" data-flag='2' bind:touchstart="switchMyInfo" bind:touchend="switchMyStyle" bindtap="toHistory">
+        <image src="{{myFlag == 2 ? '../../images/history-record-hover.png' : '../../images/history-record.png'}}" class="history-record"></image>
+        <text class="{{myFlag == 2 ? 'my-active' : '' }}">历史记录</text>
+      </view>
+      <!-- 客服中心按钮 -->
+      <view class="skip-to-service" bindtap="toCustomService">客服中心</view>
+    </view>
+  </view>
+</template>

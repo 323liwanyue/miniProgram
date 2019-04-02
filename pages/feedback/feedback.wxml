@@ -1,0 +1,24 @@
+<!--pages/feedback/feedback.wxml-->
+<import src="../template/userInfo.wxml"/>
+<view class="index-container">
+<view class="wechat-header">
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<!-- 顶部 --> 
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt">反馈</text> 
+</view> 
+</view>
+</view>
+  <!-- 内容 -->
+  <text class="feed-back-title" style="padding-top: {{statusBarHeight+titleBarHeight}}px;">反馈内容：</text>
+  <textarea class="feed-back-cnt" placeholder="请输入反馈内容" maxlength="-1" bindinput="getFeedbackCnt" bindblur='getFeedbackCnt2'></textarea>
+  <text class="feed-back-title">联系方式：</text>
+  <input type="text" class="contact" bindinput="getContact" bindblur='getContact2'></input>
+  <view class="btn-common-wrap"><view class="common-btn" bindtap="commitFeedback">提交反馈</view></view>
+</view>
+<view class="user-operator-wrap" style="top:calc({{statusBarHeight+titleBarHeight}}px + 20rpx);">
+    <image  src="../../images/user-s.png" class="user-s-icon" bindtap="showUserInfo"></image>
+</view>
+<template is="userInfo" data="{{uname:uname,ugender:ugender,myselfSrc:myselfSrc,historySrc:historySrc,myFlag:myFlag}}" wx:if="{{userInfoShow}}"></template>

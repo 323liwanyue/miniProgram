@@ -1,0 +1,57 @@
+<!--pages/custom-service/custom-service.wxml-->
+<!-- 顶部 -->
+
+<view class="wechat-header">
+  <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+  <view class="title-bar" style="height:{{titleBarHeight}}px">
+    <view class="title-wrap">
+      <image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image>
+      <text class="title-txt">客服中心</text>
+    </view>
+  </view>
+</view>
+<!-- 联系方式 -->
+<view class="contact-wrap" style="padding-top: {{statusBarHeight+titleBarHeight}}px;">
+  <image src="../../images/custom-service-bg.png" class="contact-bg" style="top: {{statusBarHeight+titleBarHeight}}px;"></image>
+  <view class="contact-box">
+    <view class="contact-single-box">
+      在线客服
+      <image src="../../images/message.png" class="message"></image>
+      <button open-type='contact' class="mess-btn"></button>
+    </view>
+    <image src="../../images/custom-service.png" class="custom-service-icon"></image>
+    <view class="contact-single-box" bindtap="tel">
+      电话客服
+      <image src="../../images/cellphone.png" class="cellphone"></image>
+    </view>
+  </view>
+  <view class="search-wrap">
+    <view class="search">
+      <image src="../../images/search.png" class="search-icon" bindtap="searchQues"></image>
+      <input placeholder="请输入信息" placeholder-class='search-input-placeholder' bindinput="getInptInfo"></input>
+    </view>
+  </view>
+</view>
+<!-- 问题列表 -->
+<view class="question-list-wrap" style="height: calc(100% - {{statusBarHeight+titleBarHeight}}px - 310rpx);">
+  <view class="question-switch-box">
+    <view class="question-class-name" data-tag="1" bindtap="changeQesType">
+      <image src="{{softwareSrc}}" class="software-use-icon"></image>
+      <text class="{{tag == 1 ? 'is-choose' : ''}}">软件使用</text>
+    </view>
+    <view class="question-class-name" data-tag="2" bindtap="changeQesType">
+      <image src="{{vehicleSrc}}" class="vehicle-relate-icon"></image>
+      <text class="{{tag == 2 ? 'is-choose' : ''}}">车辆相关</text>
+    </view>
+  </view>
+
+  <view wx:if="{{(tag == 1 && softData.length == 0) || (tag == 2 && vehicleData.length == 0)}}" class="no-ques-data">没有数据</view>
+  <view wx:else class="question-list-box">
+    <block wx:for="{{tag == 1 ? softData : vehicleData}}" wx:key="{{index}}">
+      <view class="question" data-index="{{index}}" data-id="{{item.i_repositoryid}}" bindtap="toQuesDetail">
+        <text class="ellipsis">{{item.c_title}}</text>
+        <image src="../../images/arrow-right.png" class="arrow-right"></image>
+      </view>
+    </block>
+  </view>
+</view>

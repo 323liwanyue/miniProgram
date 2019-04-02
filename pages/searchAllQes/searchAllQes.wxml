@@ -1,0 +1,48 @@
+<!--pages/custom-service/custom-service.wxml-->
+<!-- 顶部 --> 
+<view class="wechat-header">
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt">客服中心</text> 
+</view> 
+</view>
+</view>
+<!-- 联系方式 -->
+<view class="contact-wrap" style="padding-top: {{statusBarHeight+titleBarHeight}}px;">
+  <image src="../../images/custom-service-bg.png" class="contact-bg" style="top: {{statusBarHeight+titleBarHeight}}px;"></image>
+  <view class="contact-box">
+    <view class="contact-single-box">
+      在线客服
+      <image src="../../images/message.png" class="message"></image>
+      <button open-type='contact' class="mess-btn"></button>
+    </view>
+    <image src="../../images/custom-service.png" class="custom-service-icon"></image>
+    <view class="contact-single-box" bindtap="tel">
+      电话客服
+      <image src="../../images/cellphone.png" class="cellphone"></image>
+    </view>
+  </view>
+  <view class="search-wrap">
+    <view class="search">
+      <image src="../../images/search.png" class="search-icon" bindtap="searchQues"></image>
+      <input placeholder="请输入信息" placeholder-class='search-input-placeholder' bindinput="getInptInfo" value="{{inputvalue}}"></input>
+    </view>
+  </view>
+</view>
+<!-- 问题列表 -->
+<view class="question-list-wrap">
+  <view wx:if="{{allData.length == 0}}" class="ques-no-wrap">
+      <image src="../../images/search2.png" class="search2-icon"></image>
+      <text>没有搜索到相关问题，请重试或联系客服</text>
+  </view>
+  <view wx:else class="question-list-box">
+    <block wx:for="{{allData}}" wx:key="{{index}}">
+      <view class="question" data-index="{{index}}" data-id="{{item.i_repositoryid}}" bindtap="toQuesDetail">
+        <text class="ellipsis">{{item.c_title}}</text>
+        <image src="../../images/arrow-right.png" class="arrow-right"></image>
+      </view>
+    </block>
+  </view>
+</view>

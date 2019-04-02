@@ -1,0 +1,144 @@
+<!--index.wxml-->
+<import src="../template/userInfo.wxml" />
+
+<!-- 登錄 -->
+<view class="login-container" wx:if="{{logined == 0}}">
+  <image class="login-bg" src="../../images/log-bg.png"></image>
+  <text class="login-title">{{titleDes}}</text>
+  <view class="login-info-wrap login-username-wrap">
+    <image class="login-user-icon" src="../../images/user.png"></image>
+    <input type="text" placeholder="请输入您的用户名" placeholder-class='login-placeholder' bindinput="getUserName" bindblur="getUser" value="{{userName}}"></input>
+  </view>
+  <view class="login-info-wrap login-password-wrap">
+    <image class="login-password-icon" src="../../images/key.png"></image>
+    <view class="login-pwd-box">
+      <input type="password" placeholder="请输入您的密码" placeholder-class='login-placeholder' bindinput="getPassword" value="{{userPassword}}"></input>
+      <image class="login-clear-pwd" src="../../images/del.png" bindtap="clearPassword"></image>
+    </view>
+  </view>
+  <view class="login-btn-wrap">
+    <view class="login-btn" bindtap="login">{{btnDes}}</view>
+  </view>
+  <view wx:if="{{!bind}}">
+    <view class="other-method">--------------- 其他登录方式 -------------</view>
+    <view class="other-method-icons">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        <image src="../../images/wx.png"></image>
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- 首頁 -->
+<view class="index-container" wx:if="{{logined == 1}}">
+  <view class="wechat-header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <!-- 顶部 -->
+      <view class="title-wrap">
+        <image src="../../images/locate.png" class="locate-s-icon"></image>
+        <text class="title-txt">{{navtitle}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="index-cnt-wrap" style="padding-top:{{statusBarHeight+titleBarHeight}}px;min-height: calc(100% - {{statusBarHeight+titleBarHeight}}px - 50rpx);">
+    <view class="update-time" style="top:calc({{statusBarHeight+titleBarHeight}}px + 20rpx);">数据最后更新时间：{{updatetime}}</view>
+    <image src="../../images/carr-bg2.png" class="index-carr-bg" style="top:{{statusBarHeight+titleBarHeight}}px"></image>
+    <!-- 轮播 -->
+    <swiper class='index-swiper' previous-margin="136rpx" next-margin="136rpx" circular bindchange="bindchange" current="{{current}}">
+      <block wx:for="{{vehicleInfo}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.vsrc}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}">
+            <text class="plate-on-car">{{item.vplatenum}}</text>
+          </image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 轮播操作按钮 -->
+    <view class="swiper-btns-wrap">
+      <view catchtap="prevchange">
+        <image src="../../images/prev.png" class="swiper-prev-btn"></image>
+      </view>
+      <view class="swiper-info-wrap">
+        <text>{{vehicleName}}</text>
+        <text>{{vehiclePlate}}</text>
+      </view>
+      <view catchtap="nextchange">
+        <image src="../../images/next.png" class="swiper-next-btn"></image>
+      </view>
+    </view>
+    <!-- 电量显示 -->
+    <view class="index-battery-wrap">
+      <image src="../../images/battery.png"></image>
+      <view class="process">
+        <view class="process-active" style="width: {{soc}}%"></view>
+      </view>
+      <text>{{soc}}%</text>
+    </view>
+    <view class="index-required-time" wx:if="{{electricState == 'statuscd'}}">预计充满还需
+      <text>{{hour}}</text> 时
+      <text>{{minute}}</text> 分</view>
+    <view class="index-required-time" wx:elif="{{electricState == 'statuswcd'}}">电量{{soc}}%</view>
+    <view class="index-required-time" wx:elif="{{electricState == 'statusunknow'}}">{{soc == "--" ? "--" : soc + "%"}}</view>
+    <!-- 车辆详情 -->
+    <view class="index-detail-wrap">
+      <view class="index-detail-group">
+        <text class="item-title">高压电池</text>
+        <view class="index-single-box">
+          <block wx:for="{{arrParam}}" wx:key="{{index}}">
+            <view class="index-single-item">
+              <text>{{item.param}}</text>
+              <text>{{item.value}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="index-detail-group">
+        <text class="item-title">其他</text>
+        <view class="index-single-box2">
+          <block wx:for="{{otherArrParam}}" wx:key="{{index}}">
+            <view class="index-item2-list">
+              <text>{{item.param}}</text>
+              <text>{{item.value}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <!-- 報警狀態 -->
+    <view class="index-alarm-status" bindtap='switchAlarmList' wx:if="{{alarmList.length}}" data-flag="1">
+      <text class="have-alarm have-alarm-blink">有报警 </text>
+      <image src="../../images/arrow-up.png" class="arrow-up"></image>
+    </view>
+    <view class="index-alarm-status" wx:else>
+      <text>无报警 </text>
+    </view>
+  </view>
+
+
+  <!-- 報警列表 -->
+  <view class="index-alarm-wrap" catchtouchmove="true" wx:if="{{alarmListShow && alarmList.length}}">
+    <view class="alarm-list-space" bindtap="switchAlarmList" bind:touchstart="switchAlarmList"></view>
+    <view class="index-alarm-list">
+      <view class="index-status-open" bindtap='switchAlarmList'>
+        <text class="have-alarm">有报警 </text>
+        <image src="../../images/arrow-down.png" class="arrow-down"></image>
+      </view>
+      <scroll-view class="alarm-list-wrap" scroll-y>
+        <block wx:for="{{alarmList}}" wx:key="{{index}}">
+          <view class="alarm-single-box" bindtap="toAlarmDetail" data-id="{{item.alarmid}}" data-index="{{index}}">
+            <text class="index-alarm-title">{{item.alarmname}}</text>
+            <view class="index-alarm-btn">详情</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="user-operator-wrap" bindtap="showUserInfo" style="top:calc({{statusBarHeight+titleBarHeight}}px + 20rpx);">
+    <image src="../../images/user-s.png" class="user-s-icon"></image>
+  </view>
+
+  <template is="userInfo" data="{{uname:uname,ugender:ugender,myselfSrc:myselfSrc,historySrc:historySrc,myFlag:myFlag}}" wx:if="{{userInfoShow}}"></template>
+</view>

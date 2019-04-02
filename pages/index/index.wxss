@@ -1,0 +1,458 @@
+/**index.wxss**/
+@import "../template/userInfo.wxss";
+
+page, .index-container {
+  height: 100%;
+}
+
+/* 登錄 */
+
+.login-container {
+  width: 100%;
+  height: 100%;
+}
+
+.login-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.login-title {
+  display: block;
+  padding-top: 280rpx;
+  margin-bottom: 340rpx;
+  font-size: 44rpx;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 4rpx;
+}
+
+.login-info-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 70rpx;
+  margin-bottom: 30rpx;
+}
+
+.login-username-wrap input, .login-pwd-box, .login-verify-wrap input {
+  width: 450rpx;
+  margin-left: 24rpx;
+  border-bottom: 1rpx solid #999;
+  font-size: 30rpx;
+}
+
+.login-pwd-box {
+  display: flex;
+  align-items: center;
+}
+
+.login-pwd-box input {
+  width: 420rpx;
+}
+
+.login-verify-wrap input {
+  width: 210rpx;
+  margin-right: 40rpx;
+}
+
+.login-placeholder {
+  color: #ccc;
+}
+
+.login-user-icon {
+  width: 49rpx;
+  height: 51rpx;
+}
+
+.login-password-icon {
+  width: 38rpx;
+  height: 49rpx;
+}
+
+.login-clear-pwd {
+  width: 30rpx;
+  height: 31rpx;
+}
+
+.login-verify-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.login-verify-detail {
+  width: 200rpx;
+  height: 70rpx;
+}
+
+.login-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 100rpx;
+}
+
+.login-btn {
+  width: 400rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  background: #58bceb;
+  color: #fff;
+  font-size: 40rpx;
+  letter-spacing: 36rpx;
+  text-indent: 36rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.other-method {
+  margin-top: 51rpx;
+  margin-bottom: 16rpx;
+  color: #ccc;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.other-method-icons {
+  text-align: center;
+}
+
+.other-method-icons button {
+  width: 71rpx;
+  height: 70rpx;
+  padding: 0;
+  background: none;
+}
+
+.other-method-icons button::after {
+  border: none;
+}
+
+.other-method-icons image {
+  width: 71rpx;
+  height: 70rpx;
+  vertical-align: top;
+}
+
+/* 首頁 */
+
+/* 内容 */
+
+.index-cnt-wrap {
+  position: relative;
+  padding-bottom: 50rpx;
+  background: -webkit-linear-gradient(top, #7ecef4, #021336);
+  background: -moz-linear-gradient(top, #7ecef4, #021336);
+  background: -o-linear-gradient(top, #7ecef4, #021336);
+  background: linear-gradient(to bottom, #7ecef4, #021336);
+}
+
+/* 轮播 */
+
+.index-carr-bg {
+  position: absolute;
+  left: 0;
+  /* top: 0; */
+  width: 100%;
+  height: 380rpx;
+}
+
+.index-swiper {
+  height: 300rpx;
+  padding-top: 30rpx;
+}
+
+.update-time {
+  position: absolute;
+  /* top: 10rpx; */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-size: 22rpx;
+  line-height: 22rpx;
+  z-index: 3;
+}
+
+.plate-on-car {
+  display: inline-block;
+  position: absolute;
+  /* width: 58rpx; */
+  width: 98rpx;
+  height: 24rpx;
+  line-height: 22rpx;
+  font-size: 12rpx;
+  text-align: center;
+  color: #fff;
+  left: 24rpx;
+  bottom: 82rpx;
+  z-index: 2;
+  transform: scaleX(0.65);
+}
+
+.slide-image {
+  width: 447rpx;
+  height: 229rpx;
+}
+
+.slide-image.active {
+  transform: translate3d(0, 26%, 0);
+  transition: all 0.2s ease-in 0s;
+}
+
+.slide-image.quiet {
+  transform: translate3d(0, 20%, 0) scale(0.8333);
+  transition: all 0.2s ease-in 0s;
+}
+
+/* 轮播箭头 */
+
+.swiper-btns-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24rpx;
+  padding: 0 20rpx;
+}
+
+.swiper-btns-wrap image {
+  width: 222rpx;
+  height: 61rpx;
+}
+
+.swiper-info-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  line-height: 50rpx;
+}
+
+.swiper-info-wrap text:first-child {
+  font-size: 28rpx;
+}
+
+.swiper-info-wrap text:last-child {
+  font-size: 30rpx;
+}
+
+/* 电量显示 */
+
+.index-battery-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 24rpx;
+}
+
+.index-battery-wrap image {
+  width: 30rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.process {
+  position: relative;
+  width: 420rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 4rpx, transparent 4rpx);
+  background-size: 8rpx 40rpx;
+}
+
+.process-active {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 4rpx, transparent 4rpx);
+  background-size: 8rpx 40rpx;
+}
+
+.index-required-time {
+  margin-top: 20rpx;
+  margin-bottom: 44rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.index-required-time text {
+  color: #7ecef4;
+}
+
+/* 车辆详情 */
+
+.index-detail-wrap {
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.index-detail-group {
+  position: relative;
+  width: calc((100% - 20rpx) / 2 - 20rpx);
+  height: 440rpx;
+  padding: 40rpx 10rpx 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1rpx solid #fff;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+
+.item-title {
+  position: absolute;
+  top: -20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120rpx;
+  height: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.index-single-box {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.index-single-item {
+  display: flex;
+  flex-direction: column;
+  width: calc((100% - 10rpx) / 2);
+  color: #fff;
+}
+
+.index-single-item:nth-child(odd) {
+  margin-right: 10rpx;
+}
+
+.index-single-item text:last-child, .index-item2-list text:last-child {
+  color: #7ecef4;
+  font-size: 30rpx;
+}
+
+.index-single-box2 {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.index-item2-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 10rpx;
+  color: #fff;
+}
+
+/* 報警狀態 */
+
+.index-alarm-status {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.index-alarm-status, .index-status-open {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 50rpx 50rpx 0 0;
+  font-size: 28rpx;
+}
+
+.arrow-up, .arrow-down {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.have-alarm {
+  color: red;
+}
+
+.have-alarm-blink {
+  animation: have-alarm-blink 1s linear infinite;
+}
+
+@keyframes have-alarm-blink {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 報警列表 */
+
+.index-alarm-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+}
+
+.alarm-list-space {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.index-alarm-list {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.alarm-list-wrap {
+  width: calc(100% - 40rpx);
+  max-height: 300rpx;
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.alarm-single-box {
+  display: flex;
+  height: 70rpx;
+  padding: 0 20rpx;
+  margin-bottom: 10rpx;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #7ecef4;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+
+.index-alarm-title {
+  width: calc(100% - 210rpx);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.index-alarm-btn {
+  width: 200rpx;
+  height: 50rpx;
+  background: #353f45;
+  border-radius: 10rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 50rpx;
+}

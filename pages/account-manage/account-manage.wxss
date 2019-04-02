@@ -1,0 +1,27 @@
+/* pages/account-manage/account-manage.wxss */
+page {
+  background: #f2f2f2;
+}
+
+.account-info-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89rpx;
+  padding: 0 20rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.account-info-list text:last-child {
+  display: inline-block;
+  width: calc(100% - 100rpx);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  color: #666;
+}
+

@@ -1,0 +1,41 @@
+/* pages/feedback/feedback.wxss */
+@import "../template/userInfo.wxss";
+page {
+  height: 100%;
+}
+
+.index-container {
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+}
+
+/* 内容 */
+.feed-back-title {
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-indent: 20rpx;
+  font-size: 28rpx;
+}
+
+.feed-back-cnt {
+  width: calc(100% - 40rpx);
+  height: 260rpx;
+  padding: 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.contact {
+  width: calc(100% - 30rpx);
+  height: 90rpx;
+  margin-bottom: 60rpx;
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+  line-height: 90rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+

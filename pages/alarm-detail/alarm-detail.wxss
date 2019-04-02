@@ -1,0 +1,52 @@
+/* pages/alarm-detail/alarm-detail.wxss */
+@import "../template/userInfo.wxss";
+page {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.index-container {
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  box-sizing: border-box;
+}
+
+.space {
+  width: 100%;
+  height: 10rpx;
+  background: #f2f2f2;
+}
+
+/* 内容 */
+.alarm-detail-cnt {
+  width: calc(100% - 40rpx);
+  /* height: calc(100% - 240rpx); */
+  padding: 0 20rpx;
+  background: #fff;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.alarm-title {
+  display: inline-block;
+  margin-top: 34rpx;
+  font-size: 34rpx;
+}
+
+/* 提交反馈 */
+.alarm-detail-feedback {
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #2eabe6;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.textLeft {
+  text-align: left;
+}

@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/alarm-detail/alarm-detail",
+    "pages/feedback/feedback",
+    "pages/history-record/history-record",
+    "pages/custom-service/custom-service",
+    "pages/searchAllQes/searchAllQes",
+    "pages/question-detail/question-detail",
+    "pages/account-manage/account-manage",
+    "pages/change-password/change-password"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  }
+}

@@ -1,0 +1,40 @@
+<!--pages/history-record/history-record.wxml-->
+<view class="wechat-header">
+<view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+<view class="title-bar" style="height:{{titleBarHeight}}px">
+<!-- 顶部 --> 
+<view class="title-wrap"> 
+<image class="arrow-left" src="../../images/arrow-left.png" bindtap="back"></image> 
+<text class="title-txt">历史记录</text> 
+</view> 
+</view>
+</view>
+<!-- 内容 -->
+<view wx:if="{{loading}}" class="nodata" style="padding-top: calc({{statusBarHeight+titleBarHeight}}px);height: calc(100% - 2 * {{statusBarHeight+titleBarHeight}}px);"><image class="load-icon" src="../../images/loading.gif"></image> </view>
+<view wx:elif="{{datetimes.length == 0}}" class="nodata" style="padding-top: calc({{statusBarHeight+titleBarHeight}}px);height: calc(100% - 2 * {{statusBarHeight+titleBarHeight}}px);">没有历史记录</view>
+<view wx:else class="history-record-cnt" style="padding-top: calc({{statusBarHeight+titleBarHeight}}px);">
+  <block wx:for="{{datetimes}}" wx:key="{{index}}" wx:for-item="item1">
+  <view class="daily-history-wrap">
+    <text class="history-time">{{item1.date == today ? "今天" : item1.date}}</text>
+    <block wx:for="{{item1.data}}" wx:key="{{dindex}}">
+      <view wx:if="{{item.status}}" class="daily-history-list">
+        <text>充电时长：{{item.chargetime.hour}} 时 {{item.chargetime.minute}} 分</text>
+        <text>充电量：{{item.startchargevolume}}{{item.endchargevolume}}</text>
+        <text wx:if="{{item.isEnd=='1'}}">充电状态：<text class="is-full">充满</text></text>
+        <text wx:else>充电状态：<text class="is-not-full">未充满</text></text>
+        <view class="daily-history-clock">
+          <text>开始充电时间</text>
+          <text>{{item1.date}} {{item.chargeclock}}</text>
+        </view>
+      </view>
+      <view wx:else class="charge-fail">
+        <text>充电失败</text>
+        <view class="daily-history-clock">
+          <text>开始充电时间</text>
+          <text>{{item1.date}} {{item.chargeclock}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  </block>
+</view>
